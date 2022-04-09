@@ -1,0 +1,9 @@
+Python 3 is used to develop the project.
+
+Once python 3 is installed all other requirements can be installed using command:
+pip install -r Requirements.txt
+
+To run the project:
+1.Open command prompt and move into the "Student Buddy App" directory.
+2.use command "python app1.py"
+App will start running on localhost:5000

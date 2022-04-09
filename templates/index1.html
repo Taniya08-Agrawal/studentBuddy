@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Student Buddy</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="{{url_for('static', filename='somejavascriptfile.js')}}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/stylesheet.css') }}">
+        <style>
+            .container{
+                width: 70%;
+                align-self: center;
+            }
+        </style>
+    </head>
+    <body>
+
+
+            
+
+<div>
+
+            
+<!-- Navbar -->
+<header class="main_menu home_menu">
+    <div class="container">
+    <div class="row align-items-center">
+    <div class="col-lg-12">
+    <nav>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQOskElbHHwUbetCb800U1B6917Vdpvha9g&usqp=CAU">
+    <strong style="font-weight: bold;display: inline-block;margin-left: 60px;font-size: 18px;margin-top: 18px;color: #344c7a;">STUDENT BUDDY</strong>
+   
+    </nav>
+    </div>
+    </div>
+    </div>
+    </header>
+
+
+ <!-- End of Navbar -->
+
+<div class="file__upload">
+<form action = "/" method = 'POST' enctype="multipart/form-data">
+
+
+    <div class="form-group">
+        <div class="header">
+            
+            <p><i class="fa fa-upload-cloud-upload"></i><span>Upload</span></p>
+        </div>
+
+        <div class ="c">
+            <!-- <input type="file" id="upload"> -->
+            <br>
+            <input  type="file" name="file" id="upload" required/> 
+            <label for="upload">
+                <i class="fa fa-file-text-o"></i>
+                <br>
+                <p>
+                    <span>Drag and Drop</span>files here<br>
+                    or <span>browse</span> to begin the upload
+                </p>
+            </label>
+
+
+
+   <div class="generateSummary">
+            <br>
+            <br>
+        <label for="type" >Generate Summary of:</label>
+        <select onchange="yesnoCheck(this);" name="type">
+            <option value="highlighted">Highlighted Text</option>
+            <option value="pages">Specific Pages</option>
+        </select>
+
+        <div id="ifYes" style="display: none;">
+            <div class="form-group">
+                <br>
+                <label for="kind">Enter page range (in format startpage-endpage)</label><br> 
+                <input class="form-control"type="text" id="kind" name="kind" /><br>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        </div>
+       
+    </div> 
+
+
+
+
+
+    <!-- <div class="form-group">
+        <div class="generateSummary">
+            <br>
+            <br>
+        <label for="type" class="button_">Generate Summary of:</label>
+        <select onchange="yesnoCheck(this);" name="type">
+            <option value="highlighted">Highlighted Text</option>
+            <option value="pages">Specific Pages</option>
+        </select>
+
+        <div id="ifYes" style="display: none;">
+            <div class="form-group">
+                <br>
+                <label for="kind">Enter page range (in format startpage-endpage)</label><br> 
+                <input class="form-control"type="text" id="kind" name="kind" /><br>
+            </div>
+        </div>
+
+    </div> -->
+
+    
+</div>
+    <div >
+        <br>
+        <br>
+        <input class="button_" type="submit" value="Generate Summary">
+    </div>
+</form>
+</div>
+
+
+
+<br>
+<br>
+
+</div>
+
+<div class="displaySummary">
+    <h1 class="text-center">Summary</h1>
+    <hr>
+    <p>{{ f_text }}</p>  
+</div>
+
+
+
+
+    </body>
+</html>
+
+<script type="text/javascript">
+    function yesnoCheck(that) {
+    if (that.value == "pages") {
+        document.getElementById("ifYes").style.display = "block";
+    } else {
+        document.getElementById("ifYes").style.display = "none";
+    }
+}
+</script>

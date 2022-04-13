@@ -1,7 +1,0 @@
-Flask
-nltk
-numpy
-pdfminer
-PyMuPDF
-torch
-transformers
